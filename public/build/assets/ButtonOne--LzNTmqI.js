@@ -1,0 +1,1 @@
+import{j as t}from"./app-BIZ5UUjZ.js";import{b as r}from"./chunk-NXTXE2B3-CUgcCThK.js";import"./chunk-BSXPKUBX-bPhEZUX7.js";import"./index-BsDyj3j9.js";function m(){return t.jsx(r,{color:"primary",size:"sm",radius:"sm",variant:"shadow",children:"Button"})}export{m as default};
