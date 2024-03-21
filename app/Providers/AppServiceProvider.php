@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
+use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,11 @@ class AppServiceProvider extends ServiceProvider
 	 */
 	public function boot(): void
 	{
+
+		Gate::define('viewPulse', function (User $user) {
+			return $user->can_view_pulse;
+		});
+
 		Model::shouldBeStrict(!app()->isProduction());
 		Model::preventLazyLoading(!app()->isProduction());
 	}
